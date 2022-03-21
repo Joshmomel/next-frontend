@@ -1,25 +1,27 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import styled from 'styled-components'
+
 import Counter from '../features/counter/Counter'
-import styles from '../styles/Home.module.css'
-import Picker from '../features/form/Picker'
+
+const Home = styled.div`
+  height: 100vh;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+`
 
 const IndexPage: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <Home>
       <Head>
         <title>Redux Toolkit</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon"/>
       </Head>
-      <header className={styles.header}>
-        <h1>Counter</h1>
-        <Counter />
-
-        <h1>Picker</h1>
-        <Picker />
-      </header>
-    </div>
+      <Counter />
+    </Home>
   )
 }
 
